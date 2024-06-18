@@ -94,3 +94,21 @@ ul {
 .nav li {
   margin-right: 20px;
 }
+
+
+.singleArticle {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+}
+
+.singleArticleImage {
+  width: 500px;
+  height: auto;
+}
+
+.singleArticlePara {
+  display: flex;
+  flex-direction: row;
+}
+
