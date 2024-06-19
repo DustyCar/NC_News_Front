@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import getSingleArticle from "./axiosURLs/getSingleArticle";
+import { CommentCards } from "./CommentCards";
 
 export function SingleArticlePage() {
 
@@ -11,7 +11,7 @@ export function SingleArticlePage() {
 
 
   useEffect(() => {
-    axios.get(getSingleArticle(article_id)).then((response) => {
+    getSingleArticle(article_id).then((response) => {
 
       setSingleArticleData(response.data.article[0]);
       setLoading(false);
@@ -38,6 +38,8 @@ export function SingleArticlePage() {
           <li>UpVotes{singleArticleData.comment_count}</li>
           <li>Created on {singleArticleData.created_at}</li>
           </ul>
+
+          <CommentCards article_id={article_id} />
         
      
 
@@ -45,4 +47,6 @@ export function SingleArticlePage() {
     );
   }
 }
+
+
 

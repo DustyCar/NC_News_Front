@@ -50,10 +50,6 @@
 }
 
 
-
-
-
-
 ul {
   list-style-type: none;
 }
@@ -103,6 +99,8 @@ ul {
 }
 
 .singleArticleImage {
+  display: flex;
+  flex-wrap: wrap;
   width: 500px;
   height: auto;
 }
@@ -110,5 +108,28 @@ ul {
 .singleArticlePara {
   display: flex;
   flex-direction: row;
+}
+
+
+.comments {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 14px; 
+  list-style-type: none; 
+}
+
+.commentBox {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #6b5968; 
+  border: 2px solid #ddd; 
+  padding: 30px; 
+  border-radius: 5px; 
+ 
+}
+
+.votes {
+  padding-top: 10px;
+  text-align: right;
 }
 

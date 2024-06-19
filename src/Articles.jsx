@@ -8,7 +8,7 @@ export function Articles() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(getArticles()).then((response) => {
+    getArticles().then((response) => {
 
       setArticles(response.data.rows);
       setLoading(false);
