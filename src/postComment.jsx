@@ -12,11 +12,10 @@ export default function PostComment({article_id, commentList, setCommentList}) {
     function handleSubmit(event) {
         event.preventDefault();
          axios.post(`https://andrew-nc-news.onrender.com/api/articles/${article_id}/comments`, {username: myusername, body: mycomment}).then((response) => {
-         
-         
-          setCommentList([...commentList, response.data.comment]); 
-          window.location.reload();
-          
+          setCommentList([response.data.newComment, ...commentList]); 
+
+          setmyUsername("")
+          setmyComment("")
          })
       }
 

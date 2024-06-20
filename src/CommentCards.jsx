@@ -29,7 +29,7 @@ export function CommentCards({ article_id }) {
 
         <ul className='comments'>
           {commentList.map((singleComment) => {
-             console.log(singleComment.votes)
+            
             return <li key={singleComment.comment_id} className='commentBox'>
              
               <p>User: {singleComment.author}</p>
