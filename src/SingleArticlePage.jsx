@@ -2,12 +2,17 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import getSingleArticle from "./axiosURLs/getSingleArticle";
 import { CommentCards } from "./CommentCards";
+import axios from "axios";
+
 
 export function SingleArticlePage() {
 
   const { article_id } = useParams();
   const [singleArticleData, setSingleArticleData] = useState({});
   const [loading, setLoading] = useState(true);
+  const [voteCount, setVoteCount] = useState(0)
+  const [error, setError] = useState({})
+  
 
 
   useEffect(() => {
@@ -15,8 +20,28 @@ export function SingleArticlePage() {
 
       setSingleArticleData(response.data.article[0]);
       setLoading(false);
+      setVoteCount(response.data.article[0].votes)    //I've set the initail votes value
     });
   }, []);
+
+  const patchVotes = (incVotes) => {
+    return axios.patch(`https://andrew-nc-news.onrender.com/api/articles/${article_id}`, { inc_votes: incVotes })
+      .then((response) => {
+        console.log(response.data.article.votes)
+        setVoteCount(response.data.article.votes)
+      }).catch((err) => {
+        setError(err)
+      })
+    }
+
+    const handleUpvote = () => {
+      patchVotes(1);
+    };
+  
+    const handleDownvote = () => {
+      patchVotes(-1);
+    };
+
 
 
   if (loading) {
@@ -32,17 +57,13 @@ export function SingleArticlePage() {
         
         <p>{singleArticleData.body}</p>
           <ul> 
-          
-          
-          <li>{singleArticleData.votes}</li>
-          <li>UpVotes{singleArticleData.comment_count}</li>
+          <button onClick={handleUpvote}>UpVote: {voteCount}</button>
+          <button onClick={handleDownvote}>DownVote</button>
+          <li>{singleArticleData.comment_count}</li>
           <li>Created on {singleArticleData.created_at}</li>
           </ul>
 
           <CommentCards article_id={article_id} />
-        
-     
-
       </section>
     );
   }
