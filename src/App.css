@@ -57,17 +57,26 @@ ul {
 
 .articles {
   list-style-type: none;
-  padding: 0;
-  background-color: rgb(72, 80, 77);
-   
-  
+  padding: 0; 
+}
+
+.articles h3 {
+  color: #2a2424;
 }
 
 .articles li {
   margin: 10px;
-  text-align: left; 
-  margin-bottom: 20px; 
+  padding: 20px;
+  background-color: #577072;
+  border-radius: 8px;
+
 }
+
+.articles li:hover {
+  background-color: #6f8a89; 
+}
+
+
 
 
 .articles img {

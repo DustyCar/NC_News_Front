@@ -19,6 +19,25 @@ export function CommentCards({ article_id }) {
   },[article_id]);
 
 
+  const hardCodedUser = "jessjelly";
+
+  // Delete comment function
+  function deleteComment(comment_id) {
+    axios.delete(`https://andrew-nc-news.onrender.com/api/comments/${comment_id}`)
+      .then(() => {
+        
+        // Remove the deleted comment from state
+        setCommentList(previousCommentList => previousCommentList.filter(comment => comment.comment_id !== comment_id));
+      })
+     
+  }
+
+
+
+
+
+
+
   return (
     <>
       <section>
@@ -26,6 +45,7 @@ export function CommentCards({ article_id }) {
 
         <PostComment article_id={article_id} setCommentList={setCommentList} commentList={commentList}/>
        
+      
 
         <ul className='comments'>
           {commentList.map((singleComment) => {
@@ -37,6 +57,10 @@ export function CommentCards({ article_id }) {
               <p>Posted on: {singleComment.created_at}</p>
 
               <p className="votes">Votes: {singleComment.votes}</p>
+              
+              {singleComment.author === hardCodedUser && (
+                  <button onClick={() => deleteComment(singleComment.comment_id)}>Delete</button>
+                )}
 
 
             </li>;
