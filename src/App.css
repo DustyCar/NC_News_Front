@@ -1,79 +1,63 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+
+h1 {
+  font-size: 70px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+
+a {
+  font-weight: 500;
+  color: #347ef4;
+  text-decoration: inherit;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+a:hover {
+  color: #e5e5eb;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
 
 .title {
-  display: flex;
-  text-align: left;
-  background-color: rgb(144, 94, 163); 
-  padding: 10px; 
+  
+ text-align: left;
+  background-color: rgb(175, 35, 35); 
+  padding: 20px; 
   margin: 0; 
+  
 }
 
 
 ul {
   list-style-type: none;
+
 }
 
 
 .articles {
-  list-style-type: none;
-  padding: 0; 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
+  
+  
+  
 }
 
 .articles h3 {
-  color: #2a2424;
+ 
+  color: #f8eeee;
 }
 
 .articles li {
+  min-width: 300px;
+  
   margin: 10px;
-  padding: 20px;
-  background-color: #577072;
-  border-radius: 8px;
+  padding: 10px;
+  background-color: #2f3232;
+  
 
 }
 
 .articles li:hover {
-  background-color: #6f8a89; 
+  background-color: #8a7d7d; 
 }
 
 
@@ -83,40 +67,45 @@ ul {
   max-width: 100%; 
   height: auto; 
   width: 300px; 
-  margin-right: 20px;
+  
 }
 
-.articles p {
-  text-align: right;
-}
+
 
 .nav {
   display: flex;
+  justify-content: left;
+  font-size: x-large;
   
   
 }
 
 .nav li {
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 
 .singleArticle {
   display: flex;
+  flex-wrap: wrap;
   text-align: left;
   flex-direction: column;
+
+}
+
+.singleArticleHead {
+  font-size: 40px;
 }
 
 .singleArticleImage {
-  display: flex;
-  flex-wrap: wrap;
-  width: 500px;
+  
+  width: 700px;
   height: auto;
 }
 
 .singleArticlePara {
-  display: flex;
-  flex-direction: row;
+  font-size: 20px;
+ 
 }
 
 
