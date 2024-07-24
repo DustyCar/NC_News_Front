@@ -5,7 +5,7 @@ import PostComment from './postComment'
 
 
 //comment card is child of single article 
-export function CommentCards({ article_id }) {
+export function CommentCards({ article_id, loggedInUser }) {
 
   const [commentList, setCommentList] = useState([])
   
@@ -43,7 +43,7 @@ export function CommentCards({ article_id }) {
       <section>
         <h3>Comments</h3>
 
-        <PostComment article_id={article_id} setCommentList={setCommentList} commentList={commentList}/>
+        <PostComment article_id={article_id} setCommentList={setCommentList} commentList={commentList} loggedInUser={loggedInUser}/>
        
       
 

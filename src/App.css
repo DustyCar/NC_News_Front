@@ -1,8 +1,6 @@
 
 
-h1 {
-  font-size: 70px;
-}
+
 
 
 a {
@@ -17,12 +15,19 @@ a:hover {
 
 
 .title {
-  
+  display: flex;
+  justify-content: space-between;
+  font-size: 70px;
  text-align: left;
   background-color: rgb(175, 35, 35); 
   padding: 20px; 
   margin: 0; 
   
+}
+
+.titleUser {
+ 
+  font-size: 20px;
 }
 
 
@@ -131,3 +136,18 @@ ul {
   text-align: right;
 }
 
+
+.user-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #26292e;
+}
+
+
+.user:hover {
+  background-color: #8a7d7d; 
+}
+
+.user-image {
+  width: 100px
+}

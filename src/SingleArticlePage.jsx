@@ -5,7 +5,7 @@ import { CommentCards } from "./CommentCards";
 import axios from "axios";
 
 
-export function SingleArticlePage() {
+export function SingleArticlePage({loggedInUser}) {
 
   const { article_id } = useParams();
   const [singleArticleData, setSingleArticleData] = useState({});
@@ -27,7 +27,6 @@ export function SingleArticlePage() {
   const patchVotes = (incVotes) => {
     return axios.patch(`https://andrew-nc-news.onrender.com/api/articles/${article_id}`, { inc_votes: incVotes })
       .then((response) => {
-        console.log(response.data.article.votes)
         setVoteCount(response.data.article.votes)
       }).catch((err) => {
         setError(err)
@@ -63,7 +62,7 @@ export function SingleArticlePage() {
           <li>Created on {singleArticleData.created_at}</li>
           </ul>
 
-          <CommentCards article_id={article_id} />
+          <CommentCards article_id={article_id} loggedInUser={loggedInUser} />
       </section>
     );
   }
