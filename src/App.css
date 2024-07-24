@@ -15,9 +15,7 @@ a:hover {
 
 
 .title {
-  display: flex;
-  justify-content: space-between;
-  font-size: 70px;
+  font-size: 40px;
  text-align: left;
   background-color: rgb(175, 35, 35); 
   padding: 20px; 
@@ -116,16 +114,14 @@ ul {
 
 .comments {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap; 
-  gap: 14px; 
+  gap: 20px; 
   list-style-type: none; 
 }
 
 .commentBox {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #6b5968; 
-  border: 2px solid #ddd; 
+  background-color: #3c3c56; 
   padding: 30px; 
   border-radius: 5px; 
  

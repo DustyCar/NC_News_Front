@@ -19,7 +19,7 @@ export function CommentCards({ article_id, loggedInUser }) {
   },[article_id]);
 
 
-  const hardCodedUser = "jessjelly";
+
 
   // Delete comment function
   function deleteComment(comment_id) {
@@ -58,7 +58,7 @@ export function CommentCards({ article_id, loggedInUser }) {
 
               <p className="votes">Votes: {singleComment.votes}</p>
               
-              {singleComment.author === hardCodedUser && (
+              {singleComment.author === loggedInUser && (
                   <button onClick={() => deleteComment(singleComment.comment_id)}>Delete</button>
                 )}
 
