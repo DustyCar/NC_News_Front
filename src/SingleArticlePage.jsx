@@ -5,7 +5,7 @@ import { CommentCards } from "./CommentCards";
 import axios from "axios";
 
 
-export function SingleArticlePage() {
+export function SingleArticlePage({loggedInUser}) {
 
   const { article_id } = useParams();
   const [singleArticleData, setSingleArticleData] = useState({});
@@ -27,7 +27,6 @@ export function SingleArticlePage() {
   const patchVotes = (incVotes) => {
     return axios.patch(`https://andrew-nc-news.onrender.com/api/articles/${article_id}`, { inc_votes: incVotes })
       .then((response) => {
-        console.log(response.data.article.votes)
         setVoteCount(response.data.article.votes)
       }).catch((err) => {
         setError(err)
@@ -50,20 +49,20 @@ export function SingleArticlePage() {
   else {
     return (
       <section className="singleArticle">
-        <h2>{singleArticleData.title}</h2>
+        <h2 className="singleArticleHead">{singleArticleData.title}</h2>
         <h3>Topic: {singleArticleData.topic}</h3>
         <img className="singleArticleImage" src={singleArticleData.article_img_url} alt="missing image :(" />
         <h4>Author: {singleArticleData.author}</h4>
         
-        <p>{singleArticleData.body}</p>
+        <p className="singleArticlePara">{singleArticleData.body}</p>
           <ul> 
-          <button onClick={handleUpvote}>UpVote: {voteCount}</button>
-          <button onClick={handleDownvote}>DownVote</button>
+          <button onClick={handleUpvote}>Like {voteCount}</button>
+          <button onClick={handleDownvote}>Remove Like</button>
           <li>{singleArticleData.comment_count}</li>
           <li>Created on {singleArticleData.created_at}</li>
           </ul>
 
-          <CommentCards article_id={article_id} />
+          <CommentCards article_id={article_id} loggedInUser={loggedInUser} />
       </section>
     );
   }

@@ -8,6 +8,7 @@ export default function ArticleCard(props){
            <li key={props.article.article_id}>
                    <h3>{props.article.title}</h3>
                 <img src={props.article.article_img_url} alt={props.article.title} />
+                <p>Topic: {props.article.topic}</p>
            </li>
         </Link>    
     )

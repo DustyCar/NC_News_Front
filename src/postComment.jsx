@@ -3,8 +3,8 @@ import axios from "axios"
 import { useState } from "react";
 
 
-export default function PostComment({article_id, commentList, setCommentList}) {
-    const [myusername, setmyUsername] = useState('')
+export default function PostComment({article_id, commentList, setCommentList, loggedInUser}) {
+    const [myusername, setmyUsername] = useState('jessjelly')
     const [mycomment, setmyComment] = useState('')
     
 
@@ -14,7 +14,7 @@ export default function PostComment({article_id, commentList, setCommentList}) {
          axios.post(`https://andrew-nc-news.onrender.com/api/articles/${article_id}/comments`, {username: myusername, body: mycomment}).then((response) => {
           setCommentList([response.data.newComment, ...commentList]); 
 
-          setmyUsername("")
+         
           setmyComment("")
          })
       }
@@ -27,8 +27,8 @@ export default function PostComment({article_id, commentList, setCommentList}) {
             <input
               id="myusername"
               type="text"
-              value={myusername} 
-              onChange={(e) => setmyUsername(e.target.value)} 
+              value={loggedInUser} 
+              
             />
     
             <label htmlFor="mycomment">Add Comment: </label>
