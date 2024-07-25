@@ -23,13 +23,7 @@ export default function PostComment({article_id, commentList, setCommentList, lo
         
            return(
             <form onSubmit={handleSubmit}>
-            <label htmlFor="myusername">Username: </label>
-            <input
-              id="myusername"
-              type="text"
-              value={loggedInUser} 
-              
-            />
+            <h3>User: {loggedInUser}</h3>
     
             <label htmlFor="mycomment">Add Comment: </label>
             <textarea

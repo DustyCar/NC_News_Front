@@ -11,18 +11,28 @@ a:hover {
 
 
 .title {
-  font-size: 40px;
- text-align: left;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 70px;
+  
   background-color: rgb(175, 35, 35); 
   padding: 20px; 
   margin: 0; 
   
 }
 
-.titleUser {
+.left {
+  
+}
+
+.right {
  
   font-size: 20px;
+  
 }
+
+
 
 
 ul {
@@ -43,6 +53,7 @@ body, .articles {
   
   
   
+  
 }
 
 .articles h3 {
@@ -53,9 +64,11 @@ body, .articles {
 .articles li {
   min-width: 300px;
   
+  
   margin: 10px;
-  padding: 10px;
+  padding: 20px;
   background-color: #2f3232;
+  border-radius: 2%;
   
 
 }
@@ -85,6 +98,7 @@ body, .articles {
 }
 
 .nav li {
+  
   margin-right: 15px;
   
 }
@@ -95,6 +109,8 @@ body, .articles {
   flex-wrap: wrap;
   text-align: left;
   flex-direction: column;
+  font-size: 20px;
+  
 
 }
 
@@ -103,9 +119,10 @@ body, .articles {
 }
 
 .singleArticleImage {
+  width: 100%; 
+  max-width: 600px; 
+  border-radius: 3%;
   
-  width: 350px;
-  height: auto;
 }
 
 .singleArticlePara {
@@ -113,6 +130,19 @@ body, .articles {
   font-size: 20px;
   margin: 15px
  
+}
+
+.singleArticleList {
+font-size: 15px;
+}
+
+.likeButton {
+  padding: 10px;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  
+  
 }
 
 
@@ -142,18 +172,36 @@ body, .articles {
   text-align: right;
 }
 
-
 .user-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-color: #26292e;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; 
+  border-radius: 10px; 
+  margin-right: 50px; 
 }
 
+.user {
+  padding: 15px; 
+  background-color: #3c3f44;
+  border-radius: 10px;
+}
 
 .user:hover {
   background-color: #8a7d7d; 
 }
 
 .user-image {
-  width: 100px
+  width: 100px;
+  border-radius: 50%; 
+}
+
+
+
+.foot {
+  
+  display: flex;
+  justify-content: flex-end;
+  
+  padding: 30px;
+  background: rgb(108, 42, 42);
 }

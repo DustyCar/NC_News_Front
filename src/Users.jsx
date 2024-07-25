@@ -6,14 +6,21 @@ import UserCard from './UserCard';
 export function Users({setLoggedInUser}) {
 
    const [users, setUsers] = useState([]);
+   const [loading, setLoading] = useState(true);
    
 
     useEffect(() => {
+
         getUsers().then((response) => {
         setUsers(response.data.users)
+        setLoading(false);
        
           })
     },[])
+
+    if (loading) {
+        return <p>Page Loading...</p>;
+      }
 
         
     //Card Click

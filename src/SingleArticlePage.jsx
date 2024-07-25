@@ -50,16 +50,18 @@ export function SingleArticlePage({loggedInUser}) {
     return (
       <section className="singleArticle">
         <h2 className="singleArticleHead">{singleArticleData.title}</h2>
-        <h3>Topic: {singleArticleData.topic}</h3>
+       
+        
         <img className="singleArticleImage" src={singleArticleData.article_img_url} alt="missing image :(" />
-        <h4>Author: {singleArticleData.author}</h4>
+        <h3>Topic: {singleArticleData.topic}<br/> Author: {singleArticleData.author}</h3>
         
         <p className="singleArticlePara">{singleArticleData.body}</p>
           <ul> 
-          <button onClick={handleUpvote}>Like {voteCount}</button>
+          
+          <button className="likeButton" onClick={handleUpvote}>Like {voteCount}</button>
           <button onClick={handleDownvote}>Remove Like</button>
           <li>{singleArticleData.comment_count}</li>
-          <li>Created on {singleArticleData.created_at}</li>
+          <li className="singleArticleList">Created on {singleArticleData.created_at}</li>
           </ul>
 
           <CommentCards article_id={article_id} loggedInUser={loggedInUser} />

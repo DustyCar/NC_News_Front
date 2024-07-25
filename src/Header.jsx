@@ -1,8 +1,15 @@
+
+
+
+
 export function Header({loggedInUser}) {
-  return <>
-  <h1 className="title">NORTHCODERS NEWS</h1>
-  <h3>User:{loggedInUser}</h3>
-  </>
+  return <div className="title">
+  <span className="left">NC News</span>
+  <span className="right">User: {loggedInUser}</span>
+</div>
+  
+ 
+  
   
 
      

@@ -52,8 +52,9 @@ export function CommentCards({ article_id, loggedInUser }) {
             
             return <li key={singleComment.comment_id} className='commentBox'>
              
-              <p>User: {singleComment.author}</p>
+              <p>{singleComment.author}</p>
               <p>{singleComment.body}</p>
+              
               <p>Posted on: {singleComment.created_at}</p>
 
               <p className="votes">Votes: {singleComment.votes}</p>
