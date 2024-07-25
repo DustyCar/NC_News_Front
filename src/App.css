@@ -1,8 +1,4 @@
 
-
-
-
-
 a {
   font-weight: 500;
   color: #347ef4;
@@ -34,10 +30,15 @@ ul {
 
 }
 
+body, .articles {
+  
+  padding: 0;
+}
+
 
 .articles {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   
   
   
@@ -78,13 +79,14 @@ ul {
 .nav {
   display: flex;
   justify-content: left;
-  font-size: x-large;
+  font-size: large;
   
   
 }
 
 .nav li {
-  margin-right: 30px;
+  margin-right: 15px;
+  
 }
 
 
@@ -102,28 +104,36 @@ ul {
 
 .singleArticleImage {
   
-  width: 700px;
+  width: 350px;
   height: auto;
 }
 
 .singleArticlePara {
+  flex-wrap: wrap;
   font-size: 20px;
+  margin: 15px
  
 }
 
 
 .comments {
+  
   display: flex;
   flex-direction: column;
   flex-wrap: wrap; 
   gap: 20px; 
   list-style-type: none; 
+  padding: 0; /* Remove padding if exists */
+  margin: 0; 
 }
 
 .commentBox {
+  
   background-color: #3c3c56; 
   padding: 30px; 
   border-radius: 5px; 
+  margin: 5px;
+  margin-right: 20px;
  
 }
 
