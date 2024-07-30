@@ -3,12 +3,8 @@
 This repository contains the source code for a website that displays news articles. The project connects to a backend service using the Northcoders API to fetch and manage news content.
 
 <div style="display: flex; justify-content: space-around; margin: 10px 0;">
-    <img
-        src="./images/Screen1.png" 
-        alt="Screenshot"
-        width="300px"
-    />
-     <img
+   
+ <img
         src="./images/Screen2.png" 
         alt="Screenshot"
         width="300px"
