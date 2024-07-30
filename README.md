@@ -6,12 +6,12 @@ This repository contains the source code for a website that displays news articl
     <img
         src="./images/Screen1.png" 
         alt="Screenshot"
-        width="100px"
+        width="300px"
     />
      <img
-        src="./images/Screen1.png" 
+        src="./images/Screen2.png" 
         alt="Screenshot"
-        width="100px"
+        width="300px"
     />
 </div>
 
