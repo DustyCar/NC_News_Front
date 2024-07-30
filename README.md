@@ -2,6 +2,22 @@
 
 This repository contains the source code for a website that displays news articles. The project connects to a backend service using the Northcoders API to fetch and manage news content.
 
+<div style="display: flex; justify-content: space-around; margin: 10px 0;">
+    <img
+        src="./images/Screen1.png" 
+        alt="Screenshot"
+        width="100px"
+    />
+     <img
+        src="./images/Screen1.png" 
+        alt="Screenshot"
+        width="100px"
+    />
+</div>
+
+
+
+
 ## Features
 
 View News Articles: Browse through various news articles by clicking on article cards.
@@ -12,6 +28,7 @@ Getting Started
 To set up the project locally, follow these steps:
 
 ### 1: Clone the repository
+Copy the link and paste it into a new directory in your command line.
 
 ### 2: Install dependencies
 Ensure you have Node.js installed, then run:
