@@ -5,7 +5,7 @@ This repository contains the source code for a website that displays news articl
 <div style="display: flex; justify-content: space-around; margin: 10px 0;">
    
  <img
-        src="./images/Screen2.png" 
+        src="./images/Screen3.png" 
         alt="Screenshot"
         width="300px"
     />
